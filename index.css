@@ -1,0 +1,94 @@
+/* Base styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    overflow: hidden;
+}
+
+/* Container for the app */
+#app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Button styling */
+#helloButton {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.2rem; /* Adjust font size for readability */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#helloButton:hover {
+    background-color: #0056b3;
+}
+
+/* Firework particle styling */
+.firework-particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    animation: shoot 1s ease-out forwards, fade 1s linear forwards;
+}
+
+/* Animation for the firework particles */
+@keyframes shoot {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(var(--translate-x), var(--translate-y));
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive design for smartphones */
+@media screen and (max-width: 768px) {
+    #helloButton {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .firework-particle {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #helloButton {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .firework-particle {
+        width: 3px;
+        height: 3px;
+    }
+}
